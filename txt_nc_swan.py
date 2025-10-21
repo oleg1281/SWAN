@@ -23,15 +23,19 @@ end_lon_bat = end_lon+1
 ini_lat_bat = ini_lat-1
 end_lat_bat = end_lat+1
 
-output_file_wind = f"wind_SWAN_{ini_lon_bat}_{end_lon_bat}_{ini_lat_bat}_{end_lat_bat}.dat"    # готовый файл ветра
+
+predict_file_output = "ERA5_SWAN_fala_20250301.000000_20251031.180000.nc"
+
+#output_file_wind = f"wind_SWAN_{ini_lon_bat}_{end_lon_bat}_{ini_lat_bat}_{end_lat_bat}.dat"    # готовый файл ветра
 
 # Папки
-predict_folder_input = Path(r"/mnt/mewo/Postprocesing/Oleh Bedenok/GRAPHCAST/NOAA/predict_noaa")
-data_folder_input = Path(r"/mnt/mewo/Postprocesing/Oleh Bedenok/GRAPHCAST/NOAA/data_NOAA1")
+#predict_folder_input = Path(r"/mnt/mewo/Postprocesing/Oleh Bedenok/GRAPHCAST/NOAA/predict_noaa")
+#data_folder_input = Path(r"/mnt/mewo/Postprocesing/Oleh Bedenok/GRAPHCAST/NOAA/data_NOAA1")
+output_file_hsig_noheader = "ERA5_hsig_20250301.000000_20251031.180000_noheader.txt"
 
-folder_output_RUN = Path(r"/home/obedenok@mewo.eu/SWAN/RUN")
-folder_output_PREDICT = Path(r"/mnt/mewo/Postprocesing/Oleh Bedenok/GRAPHCAST/NOAA/predict_swan")
-folder_output_SWANFILES = Path(r"/mnt/mewo/Postprocesing/Oleh Bedenok/GRAPHCAST/NOAA/SWAN_files")
+folder_output_RUN = Path(r"c:\NOAA\SWAN_files\RUN")
+folder_output_PREDICT = Path(r"c:\NOAA\SWAN_files\batym")
+#folder_output_SWANFILES = Path(r"/mnt/mewo/Postprocesing/Oleh Bedenok/GRAPHCAST/NOAA/SWAN_files")
 
 timestep = "6 HR"
 out_file_swn = "mycase.SWN"
@@ -69,7 +73,7 @@ nt = int(np.ceil(len(values) / grid_size))
 
 # === Формируем массив для NetCDF (time, lat, lon) ===
 data_array = np.zeros((nt, ny, nx), dtype=np.float32)
-assert len(values) == 1931982, 'Неправильный txt файл'
+#assert len(values) == 1931982, 'Неправильный txt файл'
 for t in range(nt):
     start_idx = t * grid_size
     end_idx = start_idx + grid_size
@@ -92,7 +96,7 @@ lat_var = ncfile.createVariable('lat', 'f8', ('lat',))
 lon_var = ncfile.createVariable('lon', 'f8', ('lon',))
 
 #Создаем список дат для файла nc
-start_d = date_72h
+start_d = datetime(2025, 3, 1, 00, 00)
 times = [start_d + timedelta(hours=6 * i) for i in range(nt)]
 # === указываем формат времени CF ===
 time_units = 'hours since 2025-10-14 00:00'
