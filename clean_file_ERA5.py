@@ -1,19 +1,29 @@
+# код для очистки файлов ERA5 от ненужных переменных и\или переименования их
+
 import xarray as xr
 
 # 1️⃣ Открываем файл ERA5
 file = "c:/NOAA/SWAN_files/batym/wind_ERA5_20250301.000000_20251031.180000.nc"
 ds = xr.open_dataset(file)
 
-# 2️⃣ Посмотрим, какие переменные есть
-print(ds)
+# 3️⃣ Удаляем ненужные координаты expver и number (если они есть)
+for coord in ["expver", "number"]:
+    if coord in ds.coords:
+        ds = ds.drop_vars(coord)
+        print(f"❌ Удалена координата: {coord}")
 
-# 3️⃣ Удаляем ненужные переменные
-# Например, оставляем только нужные:
-vars_to_keep = ['10m_u_component_of_wind', '10m_v_component_of_wind']  # замени на свои
+# 3️⃣ Оставляем только нужные переменные
+vars_to_keep = ['u10', 'v10']  # правильные имена
 ds = ds[vars_to_keep]
 
-# 4️⃣ Переименовываем координату latitude в lat и longitude в lon
-ds = ds.rename({'latitude': 'lat', 'longitude': 'lon'})
+# 4️⃣ Переименовываем координаты
+ds = ds.rename({'latitude': 'lat', 'longitude': 'lon', 'valid_time': 'time'})
 
 # 5️⃣ Сохраняем в новый файл
-ds.to_netcdf("путь_к_новому_файлу.nc")
+output_file = "c:/NOAA/SWAN_files/batym/wind_ERA5_cleaned.nc"
+ds.to_netcdf(output_file)
+
+print(f"\n✅ Готово! Файл сохранён: {output_file}")
+print("📂 Новые координаты:", list(ds.coords))
+print("📦 Новые переменные:", list(ds.data_vars))
+

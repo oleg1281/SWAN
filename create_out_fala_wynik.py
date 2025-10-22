@@ -1,3 +1,5 @@
+# этот код для создания файла высоты волны с era5, era5-swan, era5-graphcast-swan с датами такими как в предикте graphcast с координатами только 9*31 на 53*67
+
 from pathlib import Path
 import xarray as xr
 import numpy as np
@@ -5,7 +7,7 @@ import pandas as pd
 
 dir_intut_predict = Path("z:/NOAA/predict_swan/")
 dir_input_ERA5 = Path("c:/NOAA/SWAN_files/batym")
-dir_output = Path("z:/NOAA/wyniky_GraphCast_SWAN/1")
+dir_output = Path("z:/NOAA/wyniky_GraphCast_SWAN")
 
 file_input_ERA5 = "fala_ERA5_20250301.000000_20251031.180000_clean.nc"
 file_input_ERA5_SWAN = "ERA5_SWAN_fala_20250301.000000_20251031.180000.nc"
