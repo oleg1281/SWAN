@@ -7,7 +7,7 @@ import pandas as pd
 
 dir_intut_predict = Path("z:/NOAA/wyniky_GraphCast_SWAN/predict_noaa")
 dir_input_ERA5 = Path("c:/NOAA/SWAN_files/batym")
-dir_output = Path("z:/NOAA/wyniky_GraphCast_SWAN/1")
+dir_output = Path("z:/NOAA/wyniky_GraphCast_SWAN/wiatr")
 
 file_input_ERA5 = "wind_ERA5_20250301.000000_20251031.180000.nc"
 
@@ -57,14 +57,25 @@ for file in files:
     ds_pred["V10_ERA5"] = ds_era_matched["v10"]
 
     #переименуем переменную hs в ds_pred
-    ds_pred = ds_pred.rename({"10m_u_component_of_wind": "U10_predict"})
-    ds_pred = ds_pred.rename({"10m_v_component_of_wind": "V10_predict"})
+    ds_pred = ds_pred.rename({"10m_u_component_of_wind": "U10_Graphcast"})
+    ds_pred = ds_pred.rename({"10m_v_component_of_wind": "V10_Graphcast"})
+
+    # Вычисляем скорость ветра в м/с
+    ds_pred["WS_ERA5_ms"] = np.sqrt(ds_pred["U10_ERA5"] ** 2 + ds_pred["V10_ERA5"] ** 2)
+    ds_pred["WS_Graphcast_ms"] = np.sqrt(ds_pred["U10_Graphcast"] ** 2 + ds_pred["V10_Graphcast"] ** 2)
+
+    # Переводим в узлы
+    ds_pred["WS_ERA5_kn"] = ds_pred["WS_ERA5_ms"] * 1.94384
+    ds_pred["WS_Graphcast_kn"] = ds_pred["WS_Graphcast_ms"] * 1.94384
 
     # Оставляем только нужные переменные
-    ds_pred = ds_pred[["U10_ERA5", "V10_ERA5", "U10_predict", "V10_predict"]]
+    ds_pred = ds_pred[["U10_ERA5", "V10_ERA5", "U10_Graphcast", "V10_Graphcast", "WS_ERA5_ms", "WS_ERA5_kn", "WS_Graphcast_ms", "WS_Graphcast_kn"]]
 
     # Сохраняем координаты time, lat, lon
     ds_pred = ds_pred.assign_coords(time=times_pred, lat=ds_pred.lat, lon=ds_pred.lon)
+
+    if "batch" in ds_pred.dims:                             # удаляем ось batch
+        ds_pred = ds_pred.squeeze("batch", drop=True)
 
     out_file_name = f'out_wind{pd.to_datetime(times_pred[0].values).strftime("%Y_%m_%d_%H_%M")}__{pd.to_datetime(times_pred[-1].values).strftime("%Y_%m_%d_%H_%M")}.nc'
     # Сохраняем отдельные NetCDF

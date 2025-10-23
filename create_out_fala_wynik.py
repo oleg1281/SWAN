@@ -7,7 +7,7 @@ import pandas as pd
 
 dir_intut_predict = Path("z:/NOAA/predict_swan/")
 dir_input_ERA5 = Path("c:/NOAA/SWAN_files/batym")
-dir_output = Path("z:/NOAA/wyniky_GraphCast_SWAN")
+dir_output = Path("z:/NOAA/wyniky_GraphCast_SWAN/fala")
 
 file_input_ERA5 = "fala_ERA5_20250301.000000_20251031.180000_clean.nc"
 file_input_ERA5_SWAN = "ERA5_SWAN_fala_20250301.000000_20251031.180000.nc"

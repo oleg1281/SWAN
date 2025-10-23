@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b85be739-202a-45f9-9c82-c59c33a5246a" name="Changes" comment="2025.10.21 08:10">
-      <change afterPath="$PROJECT_DIR$/add_time_for_files_predict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create_out_wynik.py" afterDir="false" />
+    <list default="true" id="b85be739-202a-45f9-9c82-c59c33a5246a" name="Changes" comment="2025.10.22 10:26">
+      <change afterPath="$PROJECT_DIR$/dell.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wyksesy_swan_plotly.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean_file_ERA5.py" beforeDir="false" afterPath="$PROJECT_DIR$/clean_file_ERA5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_out_fala_wynik.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_out_fala_wynik.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_out_wind_wynik.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_out_wind_wynik.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_out_wynik.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_out_wynik.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +49,7 @@
     "Python.dell.executor": "Run",
     "Python.txt_nc_swan.executor": "Run",
     "Python.wykresy_swan.executor": "Run",
+    "Python.wyksesy_swan_plotly (1).executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
@@ -56,51 +57,7 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.create_out_wynik">
-    <configuration name="add_time_for_files_predict (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SWAN" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/add_time_for_files_predict.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="create_out_fala_wynik (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SWAN" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_out_fala_wynik.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.wykresy_dash">
     <configuration name="create_out_wind_wynik" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SWAN" />
       <option name="ENV_FILES" value="" />
@@ -145,6 +102,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="wykresy_dash" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SWAN" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\obedenok\PycharmProjects\SWAN\wykresy_dash.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="wykresy_swan" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SWAN" />
       <option name="ENV_FILES" value="" />
@@ -167,13 +146,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="wyksesy_swan_plotly (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SWAN" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wyksesy_swan_plotly.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.wykresy_dash" />
+        <item itemvalue="Python.wykresy_swan" />
+        <item itemvalue="Python.wyksesy_swan_plotly (1)" />
         <item itemvalue="Python.create_out_wynik" />
         <item itemvalue="Python.create_out_wind_wynik" />
-        <item itemvalue="Python.create_out_fala_wynik (1)" />
-        <item itemvalue="Python.add_time_for_files_predict (1)" />
-        <item itemvalue="Python.wykresy_swan" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761027055551</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="2025.10.22 10:26">
+      <option name="closed" value="true" />
+      <created>1761121596200</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1761121596200</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -325,6 +334,7 @@
     <MESSAGE value="2025.10.17 12:11" />
     <MESSAGE value="2025.10.17 15:31" />
     <MESSAGE value="2025.10.21 08:10" />
-    <option name="LAST_COMMIT_MESSAGE" value="2025.10.21 08:10" />
+    <MESSAGE value="2025.10.22 10:26" />
+    <option name="LAST_COMMIT_MESSAGE" value="2025.10.22 10:26" />
   </component>
 </project>
