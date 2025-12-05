@@ -50,11 +50,11 @@ def make_figure(file_path, lat_point=55.0, lon_point=17.0):
     # Цветные зоны
     for r in [1, 2, 3]:  # для всех трех графиков
         fig.add_vrect(x0=times[0], x1=times[0] + pd.Timedelta(days=2),
-                      fillcolor="green", opacity=0.15, row=r, col=1, line_width=0)
+                      fillcolor="green", opacity=0.3, row=r, col=1, line_width=0)
         fig.add_vrect(x0=times[0] + pd.Timedelta(days=2), x1=times[0] + pd.Timedelta(days=5),
-                      fillcolor="yellow", opacity=0.15, row=r, col=1, line_width=0)
+                      fillcolor="yellow", opacity=0.3, row=r, col=1, line_width=0)
         fig.add_vrect(x0=times[0] + pd.Timedelta(days=5), x1=times[0] + pd.Timedelta(days=8),
-                      fillcolor="red", opacity=0.15, row=r, col=1, line_width=0)
+                      fillcolor="red", opacity=0.3, row=r, col=1, line_width=0)
 
     # Настройки осей и легенды
     fig.update_layout(
