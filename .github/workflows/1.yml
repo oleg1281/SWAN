@@ -3,7 +3,7 @@ name: Run 2.py every 30 minutes
 on:
   schedule:
     - cron: "*/30 * * * *"   # запуск каждые 30 минут
-  workflow_dispatch:          # запуск вручную (кнопка "Run workflow")
+  workflow_dispatch:          # запуск вручную
 
 jobs:
   run-script:
@@ -18,10 +18,11 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install dependencies (если есть requirements.txt)
+      - name: Install dependencies
         run: |
           pip install numpy
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run 2.py
         run: python 2.py
+
