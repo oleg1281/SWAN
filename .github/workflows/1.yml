@@ -2,6 +2,7 @@ name: Run 2.py every 30 minutes
 
 on:
   push:
+  workflow_dispatch:
   schedule:
     - cron: "*/30 * * * *"
 
