@@ -2,8 +2,9 @@ name: Run download NOAA every 30 minutes
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # каждые 30 минут
+    - cron: "*/30 * * * *"   # каждые 30 минут. 
   workflow_dispatch:          # запуск вручную (по кнопке)
+  push:
 
 jobs:
   run:
